@@ -30,7 +30,7 @@
 
         &lt;!&ndash; 启动页面 &ndash;&gt;
         <activity
-            android:name=".IndexActivity"
+            android:name=".DeviceInfoActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>

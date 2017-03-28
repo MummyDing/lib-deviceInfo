@@ -18,7 +18,7 @@ import net.kisslogo.util.GetEquipInfo;
 import net.kisslogo.util.NetUtils;
 import net.kisslogo.util.PublicMethod;
 
-public class IndexActivity extends ActionBarActivity {
+public class DeviceInfoActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
