@@ -70,9 +70,10 @@
     </style>
 
     <style name="indextitle">
-        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingTop">7dp</item>
         <item name="android:textSize">19dp</item>
+        <item name="android:textColor">#000</item>
     </style>
 
     <style name="aboutstyle">
@@ -81,6 +82,12 @@
         <item name="android:paddingTop">15dp</item>
         <item name="android:paddingBottom">15dp</item>
         <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="CardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
     </style>
 
 </resources>

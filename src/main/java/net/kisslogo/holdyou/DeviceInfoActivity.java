@@ -8,23 +8,26 @@ import android.content.IntentFilter;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.telephony.TelephonyManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.github.mummyding.ymbase.widget.swipeback.SwipeBackActivity;
+
 import net.kisslogo.util.CameraUtil;
-import net.kisslogo.util.GetEquipInfo;
+import net.kisslogo.util.ArchInfoUtil;
 import net.kisslogo.util.NetUtils;
 import net.kisslogo.util.PublicMethod;
 
-public class DeviceInfoActivity extends ActionBarActivity {
+public class DeviceInfoActivity extends SwipeBackActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_index);
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setLogo(getResources().getDrawable(R.drawable.transparent));
+
         initView();
         initEvent();
         try {
@@ -81,7 +84,7 @@ public class DeviceInfoActivity extends ActionBarActivity {
 
     /*结婚生子*/
     private void init() throws Exception {
-        String[] versions = GetEquipInfo.getVersion();
+        String[] versions = ArchInfoUtil.getVersion();
         tvEquipName.setText(versions[4]);
         tvPhoneModel.setText(versions[2]);
         tvOSVersion.setText(versions[1]);
@@ -90,11 +93,11 @@ public class DeviceInfoActivity extends ActionBarActivity {
         tvIMEI.setText(((TelephonyManager) getSystemService(TELEPHONY_SERVICE))
                 .getDeviceId());
         tvMac.setText(NetUtils.getMac(this));
-        String[] cpuinfo = GetEquipInfo.getCpuInfo();
+        String[] cpuinfo = ArchInfoUtil.getCpuInfo();
         tvCPUModel.setText(cpuinfo[0]);
         tvCPUHardWare.setText(cpuinfo[1]);
-        tvCPUNum.setText(Integer.toString(GetEquipInfo.getNumCores()) + "核");
-        int maxCpuFreq = PublicMethod.stringConvertInt(GetEquipInfo.getMaxCpuFreq(), 1);
+        tvCPUNum.setText(Integer.toString(ArchInfoUtil.getNumCores()) + "核");
+        int maxCpuFreq = PublicMethod.stringConvertInt(ArchInfoUtil.getMaxCpuFreq(), 1);
         maxCpuFreq = maxCpuFreq / 1000;
         tvCPUZhuPin.setText(Integer.toString(maxCpuFreq) + "MHZ");
 
@@ -102,29 +105,29 @@ public class DeviceInfoActivity extends ActionBarActivity {
         ActivityManager am = (ActivityManager) this.getSystemService(Context.ACTIVITY_SERVICE);
         ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
         am.getMemoryInfo(mi);
-        long totalMemory = PublicMethod.stringConvertLong(GetEquipInfo.getTotalRAMMemory(), 1);
+        long totalMemory = PublicMethod.stringConvertLong(ArchInfoUtil.getTotalRAMMemory(), 1);
 
 
         tvStorageRAM.setText("(" + PublicMethod.formatSize(mi.availMem) +
                 "/" + PublicMethod.formatSize(totalMemory * 1024) + ")");
 
-        long[] rom = GetEquipInfo.getRomMemroy();
+        long[] rom = ArchInfoUtil.getRomMemroy();
             tvStorageROM.setText("(" + PublicMethod.formatSize(  rom[1]) + ")/("
                     + PublicMethod.formatSize(  rom[0]) + ")");
 
-        long[] sd = GetEquipInfo.getSDCardMemory();
+        long[] sd = ArchInfoUtil.getSDCardMemory();
         if (PublicMethod.judageSDIsExist()) {
             tvStorageSD.setText("(" + PublicMethod.formatSize((Long) sd[1])
                     + ")/(" + PublicMethod.formatSize((Long) sd[0]) + ")");
         } else {
             tvStorageSD.setText("SD卡不存在");
         }
-        String[] screen = GetEquipInfo.getDisplayMetrics(this);
+        String[] screen = ArchInfoUtil.getDisplayMetrics(this);
             tvScreenFenBianLv.setText(screen[0] + "*" + screen[1]);
             tvScreenDXMiDu.setText(screen[3] + "dpi");
         tvCameraBack.setText(CameraUtil.getCameraPixels(CameraUtil.HasBackCamera()));
         tvCameraHead.setText(CameraUtil.getCameraPixels(CameraUtil.HasFrontCamera()));
-        tvBatteryNum.setText(Double.toString(GetEquipInfo.getBatteryCapacity(this)) + "mAh");
+        tvBatteryNum.setText(Double.toString(ArchInfoUtil.getBatteryCapacity(this)) + "mAh");
 
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
 

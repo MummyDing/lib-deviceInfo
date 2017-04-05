@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * 设备基本信息
  * Created by yz1309 on 2015/3/20.
  */
-public class GetEquipInfo {
+public class ArchInfoUtil {
 
 
     /*系统版本系想你

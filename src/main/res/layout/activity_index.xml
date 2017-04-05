@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlRoot"
     android:layout_width="fill_parent"
@@ -20,29 +21,61 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <!--设备-->
-            <include layout="@layout/include_equip"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
 
-
+                <include layout="@layout/include_equip" />
+            </android.support.v7.widget.CardView>
             <!--CPU-->
-            <include layout="@layout/include_cpu"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
+
+                <include layout="@layout/include_cpu" />
+            </android.support.v7.widget.CardView>
 
 
             <!--show-->
-            <include layout="@layout/include_show"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
 
+                <include layout="@layout/include_show" />
+            </android.support.v7.widget.CardView>
 
 
             <!--存储-->
-            <include layout="@layout/include_storage"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
 
+                <include layout="@layout/include_storage" />
+            </android.support.v7.widget.CardView>
 
 
             <!--电池-->
-            <include layout="@layout/include_battery"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
+
+                <include layout="@layout/include_battery" />
+            </android.support.v7.widget.CardView>
 
 
             <!--传感器-->
-            <include layout="@layout/include_sensor"/>
+            <android.support.v7.widget.CardView
+                style="@style/CardViewStyle"
+                card_view:cardCornerRadius="4dp"
+                card_view:cardElevation="4dp">
+
+                <include layout="@layout/include_sensor" />
+            </android.support.v7.widget.CardView>
 
         </LinearLayout>
 
