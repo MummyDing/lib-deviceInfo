@@ -1,4 +1,4 @@
-package net.kisslogo.holdyou;
+package com.github.mummyding.ymsecurity.lib_device.holdyou;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

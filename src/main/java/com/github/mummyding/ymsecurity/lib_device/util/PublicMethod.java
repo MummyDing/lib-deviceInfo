@@ -1,4 +1,4 @@
-package net.kisslogo.util;
+package com.github.mummyding.ymsecurity.lib_device.util;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

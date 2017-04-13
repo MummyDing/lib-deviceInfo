@@ -1,4 +1,4 @@
-package net.kisslogo.holdyou;
+package com.github.mummyding.ymsecurity.lib_device.holdyou;
 
 import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
@@ -14,10 +14,11 @@ import android.widget.TextView;
 
 import com.github.mummyding.ymbase.widget.swipeback.SwipeBackActivity;
 
-import net.kisslogo.util.CameraUtil;
-import net.kisslogo.util.ArchInfoUtil;
-import net.kisslogo.util.NetUtils;
-import net.kisslogo.util.PublicMethod;
+import com.github.mummyding.ymsecurity.lib_device.R;
+import com.github.mummyding.ymsecurity.lib_device.util.CameraUtil;
+import com.github.mummyding.ymsecurity.lib_device.util.ArchInfoUtil;
+import com.github.mummyding.ymsecurity.lib_device.util.NetUtils;
+import com.github.mummyding.ymsecurity.lib_device.util.PublicMethod;
 
 public class DeviceInfoActivity extends SwipeBackActivity {
 

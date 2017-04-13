@@ -1,4 +1,4 @@
-package net.kisslogo.util;
+package com.github.mummyding.ymsecurity.lib_device.util;
 
 import android.content.Context;
 import android.net.wifi.WifiInfo;
